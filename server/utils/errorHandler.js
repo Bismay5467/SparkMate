@@ -1,3 +1,5 @@
+import { SERVER_ERROR } from '../common/statusCode';
+
 class ErrorHandler extends Error {
   statusCode;
 
@@ -7,10 +9,10 @@ class ErrorHandler extends Error {
   }
 }
 
-const globalErrorHandler = (error, _req, res, _next) => {
-  error.statusCode = error.statusCode || 500;
-  error.message = error.message || "Internal Server Error";
-  res.status(error.statusCode).json({ message: error.message, success: false });
+const globalErrorHandler = (error, _req, res) => {
+  const statusCode = error.statusCode || SERVER_ERROR['INTERNAL SERVER ERROR'];
+  const message = error.message || 'Internal Server Error';
+  res.status(statusCode).json({ message, success: false });
 };
 
 export { globalErrorHandler, ErrorHandler };
