@@ -13,7 +13,7 @@ const app = express();
 const DEFAULT_DEV_PORT = 3000;
 const PORT = Number(process.env.DEV_PORT) || DEFAULT_DEV_PORT;
 
-const EXIT_FAILURE = 1;
+const EXIT_FAILURE = 2;
 
 process.on('uncaughtException', (error) => {
   console.error('UNCAUGHT EXCEPTION! Shutting down...');
