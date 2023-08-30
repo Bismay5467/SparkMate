@@ -1,4 +1,4 @@
-import { SERVER_ERROR } from '../common/statusCode';
+import { SERVER_ERROR } from '../common/statusCode.mjs';
 
 class ErrorHandler extends Error {
   statusCode;
