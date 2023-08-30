@@ -1,17 +1,15 @@
-import dotenv from 'dotenv';
 import express from 'express';
 
 import compression from 'compression';
 import cookieParser from 'cookie-parser';
 
-import { ERROR_CODES } from './common/statusCode.mjs';
-import { ErrorHandler, globalErrorHandler } from './utils/errorHandler.mjs';
+import { ERROR_CODES } from './common/statusCode';
+import { ErrorHandler, globalErrorHandler } from './utils/errorHandler';
 
-dotenv.config();
 const app = express();
 
-const DEFAULT_DEV_PORT = 3000;
-const PORT = Number(process.env.DEV_PORT) || DEFAULT_DEV_PORT;
+const DEFAULT_PORT = 3000;
+const PORT = Number(process.env.PORT) || DEFAULT_PORT;
 
 const EXIT_FAILURE = 1;
 
