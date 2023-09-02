@@ -1,14 +1,19 @@
 import mongoose from 'mongoose';
 
-import { MESSAGE_STATUS } from '../common/constants.mjs';
+import {
+  MAX_CHARACTERS_FOR_CHAT,
+  MESSAGE_STATUS,
+} from '../common/constants.mjs';
 
 const chatSchema = new mongoose.Schema(
   {
     chats: [
       {
         message: {
-          // eslint-disable-next-line no-magic-numbers
-          maxlength: [1000, 'Message can be atmost of 1000 characters.'],
+          maxlength: [
+            MAX_CHARACTERS_FOR_CHAT,
+            `Message can be atmost of ${MAX_CHARACTERS_FOR_CHAT} characters.`,
+          ],
           required: [true, 'Message is a required field.'],
           type: String,
         },
