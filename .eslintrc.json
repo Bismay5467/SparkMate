@@ -22,12 +22,8 @@
     "no-magic-numbers": ["error", { 
         "ignoreArrayIndexes": true, 
         "ignoreDefaultValues": true,
-        "enforceConst": true
-    }],
-    "sort-keys": ["error", "asc", {
-        "caseSensitive": true, 
-        "natural": false, 
-        "minKeys": 2
+        "enforceConst": true,
+        "ignore": [0, 1]
     }],
     "curly": ["error", "multi-line"],
     "eqeqeq": ["error", "smart"],
@@ -48,6 +44,7 @@
       "functions": "never",
       "imports": "always-multiline",
       "objects": "always-multiline"
-    }]
+    }],
+    "operator-linebreak": ["error", "after"]
   }
 }
