@@ -187,16 +187,16 @@ userSchema.virtual('age').get(() => {
 
 userSchema.virtual('zodiacSign').get(() => {
   const dob = this.DOB;
-  // eslint-disable-next-line no-magic-numbers
+
   const month = dob.getMonth() + 1;
   const day = dob.getDate();
 
   Object.keys(ZODIAC_SIGNS).find((sign) => {
     const { start, end } = ZODIAC_SIGNS[sign];
-    // eslint-disable-next-line no-magic-numbers
+
     const startMonth = start.getMonth() + 1;
     const startDate = start.getDate();
-    // eslint-disable-next-line no-magic-numbers
+
     const endMonth = end.getMonth() + 1;
     const endDate = end.getDate();
 
