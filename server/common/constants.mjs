@@ -137,3 +137,6 @@ export const DEFAULT_DEV_PORT = 3000;
 export const EXIT_FAILURE = 1;
 
 export const EMAIL_DOMAIN_REGEX = /@nitk\.edu\.in$/;
+
+export const DEFAULT_MAX_POOL_SIZE = 100;
+export const DEFAULT_MONGO_TIMEOUT_MS = 5000;
