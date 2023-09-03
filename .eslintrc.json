@@ -22,7 +22,8 @@
     "no-magic-numbers": ["error", { 
         "ignoreArrayIndexes": true, 
         "ignoreDefaultValues": true,
-        "enforceConst": true
+        "enforceConst": true,
+        "ignore": [0, 1]
     }],
     "curly": ["error", "multi-line"],
     "eqeqeq": ["error", "smart"],
