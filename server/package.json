@@ -6,8 +6,8 @@
   "scripts": {
     "start": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "lint:server": "eslint server",
-    "lint:fix:server": "eslint --fix server"
+    "lint:server": "eslint .",
+    "lint:fix:server": "eslint --fix ."
   },
   "author": "",
   "license": "ISC",
