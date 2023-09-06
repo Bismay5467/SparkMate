@@ -25,6 +25,6 @@ cd LOVE-AT-FIRST-SWIPE/server
 
 **`npm run start`**: starts the development server.
 
-**`npm run lint`**: lists out all the linting errors and warnings in the codebase (inside server folder).
+**`npm run lint:server`**: lists out all the linting errors and warnings in the codebase (inside server folder).
 
-**`npm run lint:fix`**: fixes all the potentially fixable linting errors and warnings.
+**`npm run lint:fix:server`**: fixes all the potentially fixable linting errors and warnings.
