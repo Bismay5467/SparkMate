@@ -1,5 +1,7 @@
 import express from 'express';
 
+import { deleteChats } from '../../controllers/index.mjs';
+
 const router = express.Router();
 
 router.get('/:userID', (_req, res) => {
@@ -16,8 +18,6 @@ router.post('/messages', (_req, res) => {
   res.send('Writing chat message to the database.');
 });
 
-router.delete('/messages/inboxID', (req, res) => {
-  const { inboxID } = req.params;
-  res.send(`Deleting all existing chats on unmatching of inbox ID: ${inboxID}`);
-});
+router.delete('/messages/inboxID', deleteChats);
+
 export default router;
