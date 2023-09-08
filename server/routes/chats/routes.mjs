@@ -1,12 +1,10 @@
 import express from 'express';
 
-import { deleteChats } from '../../controllers/index.mjs';
+import { deleteChats, fetchAllChats } from '../../controllers/index.mjs';
 
 const router = express.Router();
 
-router.get('/:userID', (_req, res) => {
-  res.send('Route to support fetching of all the chats with different users');
-});
+router.get('/:userID', fetchAllChats);
 
 router.get('/:inboxID', (req, res) => {
   const { inboxID } = req.params;
