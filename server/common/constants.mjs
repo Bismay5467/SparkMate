@@ -7,7 +7,7 @@ export const GENDER = {
   'CIS MALE': 'cis male',
   'CIS FEMALE': 'cis female',
   'TRANS MALE': 'trans male',
-  'TRANS FEMALE': 'trans fenale',
+  'TRANS FEMALE': 'trans female',
   'GENDER FLUID': 'gender fluid',
   'RAHUL MAITY': 'rahul maity',
 };
