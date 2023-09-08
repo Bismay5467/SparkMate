@@ -16,6 +16,6 @@ router.post('/messages', (_req, res) => {
   res.send('Writing chat message to the database.');
 });
 
-router.delete('/messages/inboxID', deleteChats);
+router.delete('/messages/:inboxID', deleteChats);
 
 export default router;
