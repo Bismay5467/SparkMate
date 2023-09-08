@@ -6,6 +6,8 @@ import cookieParser from 'cookie-parser';
 
 import { DEFAULT_DEV_PORT, EXIT_FAILURE } from './common/constants.mjs';
 
+// eslint-disable-next-line import/no-named-default
+import { default as ChatRoutes } from './routes/chats/routes.mjs';
 import { ERROR_CODES } from './common/statusCode.mjs';
 import { ErrorHandler, globalErrorHandler } from './utils/errorHandler.mjs';
 
@@ -24,6 +26,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(compression({ level: 6, threshold: 1000 }));
+
+app.use('/chats', ChatRoutes);
 
 app.all('*', (req, _res, next) => {
   next(
