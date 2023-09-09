@@ -1,17 +1,14 @@
 export const inbox1 = {
-  userID: ['64faff276e5091939c4eee49', '64fb1dff50118fc46db59d09'],
+  userID: ['64fb8867d6497a8738475caa', '64fb8867d6497a8738475cab'],
 };
 export const inbox2 = {
-  userID: ['64faff276e5091939c4eee49', '64fb1e4744f37fc983752a44'],
+  userID: ['64fb8867d6497a8738475cac', '64fb8867d6497a8738475caa'],
 };
 export const inbox3 = {
-  userID: ['64fb1dff50118fc46db59d09', '64fb1e4744f37fc983752a44'],
-};
-export const inbox4 = {
-  userID: ['64fb1dff50118fc46db59d09', '64fb1dff50118fc46db59d09'],
+  userID: ['64fb8867d6497a8738475cac', '64fb8867d6497a8738475cab'],
 };
 /*
-rahul : 64faff276e5091939c4eee49
-arkojeet : 64fb1dff50118fc46db59d09
-biplaw : 64fb1e4744f37fc983752a44
+Rahul : 64fb8867d6497a8738475caa
+Biplaw : 64fb8867d6497a8738475cab
+Arkojeet : 64fb8867d6497a8738475cac
 */
