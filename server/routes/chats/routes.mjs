@@ -13,8 +13,6 @@ router.get('/:userID', fetchAllChats);
 
 router.get('/messages/:inboxID', fetchChats);
 
-// router.get('/inboxID', getInboxID);
-
 router.post('/initiate', chatSetUp);
 
 router.post('/messages', (_req, res) => {
