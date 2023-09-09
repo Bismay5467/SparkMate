@@ -47,7 +47,7 @@ const fetchAllChats = asyncHandler(async (req, res) => {
               $expr: {
                 $and: [
                   { $eq: ['$inboxID', '$$inboxId'] },
-                  { $gte: ['$createdAt', '$$lastVisit'] },
+                  { $gt: ['$createdAt', '$$lastVisit'] },
                 ],
               },
             },
