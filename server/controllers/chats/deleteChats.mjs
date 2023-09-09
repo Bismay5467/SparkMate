@@ -7,11 +7,9 @@ import connectDB from '../../config/database.mjs';
 import { ERROR_CODES, SUCESS_CODES } from '../../common/statusCode.mjs';
 
 const deleteChats = asyncHandler(async (req, res) => {
-  // const { inboxID } = req.params;
+  const { inboxID } = req.params;
 
   // inboxID : 64fc0e7821263725c66c1293
-
-  const inboxID = '64fc0de51e0ff36bb46c7988';
 
   await connectDB();
 
@@ -42,22 +40,6 @@ const deleteChats = asyncHandler(async (req, res) => {
       success: false,
     });
   }
-
-  // const messagesQuery = { inboxID };
-
-  // const isChatsDeleted = await MessageCollection.deleteMany(messagesQuery)
-  //   .maxTimeMS(MAX_QUERY_EXEC_TIME_MS)
-  //   .lean()
-  //   .exec();
-
-  // if (isChatsDeleted.deletedCount === 0) {
-  //   return next(
-  //     new ErrorHandler(
-  //       'Could not delete the chats matching the given inboxID.',
-  //       ERROR_CODES['NOT FOUND']
-  //     )
-  //   );
-  // }
 
   await mongoose.disconnect();
 
