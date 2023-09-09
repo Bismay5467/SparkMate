@@ -1,6 +1,7 @@
 import express from 'express';
 
 import {
+  chatSetUp,
   deleteChats,
   fetchAllChats,
   fetchChats,
@@ -11,6 +12,10 @@ const router = express.Router();
 router.get('/:userID', fetchAllChats);
 
 router.get('/messages/:inboxID', fetchChats);
+
+// router.get('/inboxID', getInboxID);
+
+router.post('/initiate', chatSetUp);
 
 router.post('/messages', (_req, res) => {
   //   const { userID, inboxID, message, status } = req.body.chats;
