@@ -93,16 +93,18 @@ const fetchAllChats = asyncHandler(async (req, res) => {
   if (Array.isArray(chats) && chats.length === 0) {
     return res.status(ERROR_CODES['NOT FOUND']).json({
       message:
-        'When you match with other users they will appear here where you can send them a message',
+        "When the stars align and you match with someone special, this is where magic happens, where your words can create a love story that's written in the stars. ✨💖📜",
       success: false,
     });
   }
 
   await mongoose.disconnect();
 
-  return res
-    .status(SUCESS_CODES.OK)
-    .json({ message: 'All chats successfully fetched.', chats, success: true });
+  return res.status(SUCESS_CODES.OK).json({
+    message: 'Your love stories, all gathered here, ready to bloom. 🌹💬',
+    chats,
+    success: true,
+  });
 });
 
 export default fetchAllChats;
@@ -112,7 +114,7 @@ export default fetchAllChats;
 ------------------------API RESPONSE------------------------
 
 {
-    "message": "All chats successfully fetched.",
+    "message": "Your love stories, all gathered here, ready to bloom. 🌹💬",
     "chats": [
         {
             "_id": "64fc0de51e0ff36bb46c7988",
