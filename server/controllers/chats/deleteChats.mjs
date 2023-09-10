@@ -15,24 +15,9 @@ const deleteChats = asyncHandler(async (req, res) => {
 
   const inboxQuery = { _id: inboxID };
 
-  // const toDelDoc = await InboxCollection.findOne(inboxQuery)
-  //   .maxTimeMS(MAX_QUERY_EXEC_TIME_MS)
-  //   .exec();
-
-  // if (toDelDoc === null) {
-  //   return res.status(ERROR_CODES['NOT FOUND']).json({
-  //     message:
-  //       "Love's thread remains unbroken! ❤️💌 Could not delete inbox data.",
-  //     success: false,
-  //   });
-  // }
-  // const isInboxDataDeleted = await toDelDoc.deleteOne();
-
   const isInboxDataDeleted = await InboxCollection.deleteOne(inboxQuery)
     .maxTimeMS(MAX_QUERY_EXEC_TIME_MS)
     .exec();
-
-  console.log(isInboxDataDeleted);
 
   if (isInboxDataDeleted.deletedCount === 0) {
     return res.status(ERROR_CODES['NOT FOUND']).json({
