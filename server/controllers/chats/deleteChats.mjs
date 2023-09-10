@@ -15,25 +15,26 @@ const deleteChats = asyncHandler(async (req, res) => {
 
   const inboxQuery = { _id: inboxID };
 
-  const toDelDoc = await InboxCollection.findOne(inboxQuery)
+  // const toDelDoc = await InboxCollection.findOne(inboxQuery)
+  //   .maxTimeMS(MAX_QUERY_EXEC_TIME_MS)
+  //   .exec();
+
+  // if (toDelDoc === null) {
+  //   return res.status(ERROR_CODES['NOT FOUND']).json({
+  //     message:
+  //       "Love's thread remains unbroken! ❤️💌 Could not delete inbox data.",
+  //     success: false,
+  //   });
+  // }
+  // const isInboxDataDeleted = await toDelDoc.deleteOne();
+
+  const isInboxDataDeleted = await InboxCollection.deleteOne(inboxQuery)
     .maxTimeMS(MAX_QUERY_EXEC_TIME_MS)
     .exec();
 
-  if (toDelDoc === null) {
-    return res.status(ERROR_CODES['NOT FOUND']).json({
-      message:
-        "Love's thread remains unbroken! ❤️💌 Could not delete inbox data.",
-      success: false,
-    });
-  }
+  console.log(isInboxDataDeleted);
 
-  const isInboxDataDeleted = await toDelDoc.deleteOne();
-
-  if (
-    typeof isInboxDataDeleted === 'object' &&
-    isInboxDataDeleted &&
-    Object.keys(isInboxDataDeleted).length === 0
-  ) {
+  if (isInboxDataDeleted.deletedCount === 0) {
     return res.status(ERROR_CODES['NOT FOUND']).json({
       message:
         "Love's thread remains unbroken! ❤️💌 Could not delete inbox data.",
