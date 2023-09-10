@@ -148,8 +148,8 @@ export const userSchema = new mongoose.Schema(
       type: [String],
       validate: {
         message: `You can choose at most ${MAX_NO_OF_PREFERENCES} preferences.`,
-        validator(pets) {
-          return pets.length <= MAX_NO_OF_PREFERENCES;
+        validator(dietaryPreferences) {
+          return dietaryPreferences.length <= MAX_NO_OF_PREFERENCES;
         },
       },
     },

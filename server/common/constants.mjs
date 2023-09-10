@@ -7,7 +7,7 @@ export const GENDER = {
   'CIS MALE': 'cis male',
   'CIS FEMALE': 'cis female',
   'TRANS MALE': 'trans male',
-  'TRANS FEMALE': 'trans fenale',
+  'TRANS FEMALE': 'trans female',
   'GENDER FLUID': 'gender fluid',
   'RAHUL MAITY': 'rahul maity',
 };
@@ -140,3 +140,6 @@ export const EMAIL_DOMAIN_REGEX = /@nitk\.edu\.in$/;
 
 export const DEFAULT_MAX_POOL_SIZE = 100;
 export const DEFAULT_MONGO_TIMEOUT_MS = 5000;
+export const MAX_QUERY_EXEC_TIME_MS = 10000;
+
+export const CHAT_BATCH_SIZE_FETCH = 15;
