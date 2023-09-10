@@ -2,6 +2,7 @@ import express from 'express';
 
 import {
   chatSetUp,
+  chatsBackup,
   deleteChats,
   fetchAllChats,
   fetchChats,
@@ -15,10 +16,7 @@ router.get('/messages/:inboxID', fetchChats);
 
 router.post('/initiate', chatSetUp);
 
-router.post('/messages', (_req, res) => {
-  //   const { userID, inboxID, message, status } = req.body.chats;
-  res.send('Writing chat message to the database.');
-});
+router.post('/messages', chatsBackup);
 
 router.delete('/messages/:inboxID', deleteChats);
 

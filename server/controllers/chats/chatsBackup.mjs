@@ -34,7 +34,7 @@ const chatsBackup = asyncHandler(async (req, res, next) => {
   if (Array.isArray(response) && response.length !== messages.length) {
     return next(
       new ErrorHandler(
-        "The melody of your chats was lost in the night's whispers! 🌙💔 Backup of chats failed.",
+        "The melody of your chats was lost in the night's whispers! 🌙💔 Backup of chats failed!!",
         ERROR_CODES['PAYLOAD TOO LARGE']
       )
     );
@@ -44,7 +44,7 @@ const chatsBackup = asyncHandler(async (req, res, next) => {
 
   return res.status(SUCESS_CODES.OK).json({
     message:
-      'Our love story, preserved in the digital whispers of our chats, remains intact! 💕📜',
+      'Your love story, preserved in the digital whispers of your chats, remains intact! 💕📜',
     success: true,
   });
 });
