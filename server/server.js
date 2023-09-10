@@ -6,14 +6,15 @@ import cookieParser from 'cookie-parser';
 
 import { DEFAULT_DEV_PORT, EXIT_FAILURE } from './common/constants.mjs';
 
-import { ChatRouter } from './routes/index.mjs';
 import { ERROR_CODES } from './common/statusCode.mjs';
+import { ChatRouter, SeedRouter } from './routes/index.mjs';
 import { ErrorHandler, globalErrorHandler } from './utils/errorHandler.mjs';
 
 dotenv.config();
 const app = express();
 
 const PORT = Number(process.env.DEV_PORT) || DEFAULT_DEV_PORT;
+const NODE_ENV = process.env.NODE_ENV || 'DEVELOPMENT';
 
 process.on('uncaughtException', (error) => {
   console.error('UNCAUGHT EXCEPTION! Shutting down...');
@@ -25,6 +26,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(compression({ level: 6, threshold: 1000 }));
+
+if (NODE_ENV === 'DEVELOPMENT') app.use('/api/seed/chats', SeedRouter);
 
 app.use('/api/chats', ChatRouter);
 
