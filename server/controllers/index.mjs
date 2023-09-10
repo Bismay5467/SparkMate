@@ -1,4 +1,5 @@
 import chatSetUp from './chats/chatSetUp.mjs';
+import chatsBackup from './chats/chatsBackup.mjs';
 import deleteChats from './chats/deleteChats.mjs';
 import fetchAllChats from './chats/fetchAllChats.mjs';
 import fetchChats from './chats/fetchChats.mjs';
@@ -19,4 +20,5 @@ export {
   SeedInboxData,
   SeedMessageData,
   SeedUserData,
+  chatsBackup,
 };
