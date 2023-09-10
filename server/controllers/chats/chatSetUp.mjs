@@ -7,9 +7,9 @@ import asyncHandler from '../../utils/asyncHandler.mjs';
 import connectDB from '../../config/database.mjs';
 
 const chatSetUp = asyncHandler(async (req, res) => {
-  // const { userID } = req.body;
+  const { userID } = req.body;
 
-  const userID = ['64fb8867d6497a8738475cab', '64fb8867d6497a8738475caa'];
+  // const userID = ['64fb8867d6497a8738475cab', '64fb8867d6497a8738475caa'];
 
   const query = {
     userID: {
