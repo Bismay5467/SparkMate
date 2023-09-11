@@ -13,7 +13,7 @@ To improve our development process, we've set up tooling and systems. SparkMate 
       📌 JEST for unit testing and integration testing.
       📌 ESLint & Prettier for code formatting. 
 
-## Setup the Project
+## 💻 Setup the Project
 
 The following steps will get you up and running to contribute to SparkMate:
 
