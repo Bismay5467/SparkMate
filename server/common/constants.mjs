@@ -1,18 +1,18 @@
-export const MESSAGE_STATUS = {
+export const MESSAGE_STATUS = Object.freeze({
   FAILED: 'failed',
   SENT: 'sent',
-};
+});
 
-export const GENDER = {
+export const GENDER = Object.freeze({
   'CIS MALE': 'cis male',
   'CIS FEMALE': 'cis female',
   'TRANS MALE': 'trans male',
   'TRANS FEMALE': 'trans female',
   'GENDER FLUID': 'gender fluid',
   'RAHUL MAITY': 'rahul maity',
-};
+});
 
-export const RELIGIOUS_BELIEF = {
+export const RELIGIOUS_BELIEF = Object.freeze({
   AGNOSTIC: 'agnostic',
   ATHEIST: 'atheist',
   BUDDHIST: 'buddhism',
@@ -33,9 +33,9 @@ export const RELIGIOUS_BELIEF = {
   'SPIRITUALLY AWAKE': 'spiritually awake',
   'SUNDAY STALWARTS': 'sunday stalwarts',
   ZOROASTRAIN: 'zoroastrian',
-};
+});
 
-export const ZODIAC_SIGNS = {
+export const ZODIAC_SIGNS = Object.freeze({
   ARIES: { start: new Date('March 21'), end: new Date('April 19') },
   TAURUS: { start: new Date('April 20'), end: new Date('May 20') },
   GEMINI: { start: new Date('May 21'), end: new Date('June 20') },
@@ -48,31 +48,31 @@ export const ZODIAC_SIGNS = {
   CAPRICORN: { start: new Date('December 22'), end: new Date('January 19') },
   AQUARIUS: { start: new Date('January 20'), end: new Date('February 18') },
   PISCES: { start: new Date('February 19'), end: new Date('March 20') },
-};
+});
 
-export const WORKOUT = {
+export const WORKOUT = Object.freeze({
   SOMETIMES: 'sometimes',
   REGULAR: 'regular',
   NEVER: 'never',
-};
+});
 
-export const DRINKING_HABITS = {
+export const DRINKING_HABITS = Object.freeze({
   FREQUENTLY: 'frequently',
   NEVER: 'never',
   RARELY: 'rarely',
   SOBER: 'sober',
   SOCIALLY: 'socially',
-};
+});
 
-export const SMOKING_HABITS = {
+export const SMOKING_HABITS = Object.freeze({
   NEVER: 'never',
   'SMOKING WHEN DRINKING': 'smoking when drinking',
   SMOKER: 'smoker',
   'SOCIAL SMOKER': 'social smoker',
   'TRYING TO QUIT': 'trying to quit',
-};
+});
 
-export const PETS = {
+export const PETS = Object.freeze({
   DOG: 'dog',
   CAT: 'cat',
   BIRD: 'bird',
@@ -85,9 +85,9 @@ export const PETS = {
   'ALL THE PETS': 'all the pets',
   'WANT A PET': 'want a pet',
   'ALLERGIC TO PETS': 'allergic to pets',
-};
+});
 
-export const DIETARY_PREFERENCES = {
+export const DIETARY_PREFERENCES = Object.freeze({
   VEGAN: 'vegan',
   VEGETARIAN: 'vegetarian',
   EGGETARIAN: 'eggetarian',
@@ -98,31 +98,31 @@ export const DIETARY_PREFERENCES = {
   HALAL: 'halal',
   'NON VEGETARIAN': 'non vegetarian',
   OTHER: 'other',
-};
+});
 
-export const LOVE_STYLES = {
+export const LOVE_STYLES = Object.freeze({
   'THOUGHTFUL GESTURES': 'thoughtful gestures',
   PRESENTS: 'presents',
   TOUCH: 'touch',
   COMPLIMENTS: 'compliments',
   'QUALITY TIME': 'quality time',
-};
+});
 
-export const LOOKING_FOR = {
+export const LOOKING_FOR = Object.freeze({
   'LONG TERM PARTNER': 'long-term partner',
   'LONG TERM, OPEN TO SHORT': 'long term, open to short',
   'SHORT TERM, OPEN TO LONG': 'short term, open to long',
   'SHORT TERM FUN': 'short-term fun',
   'NEW FRIENDS': 'new friends',
   'STILL FIGURUING IT OUT': 'still figuring it out',
-};
+});
 
-export const EDUCATION = {
+export const EDUCATION = Object.freeze({
   UNDERGRAD: 'under graduate',
   POSTGRAD: 'post graduate',
   RESEARCHER: 'researcher',
   OTHER: 'other',
-};
+});
 
 export const MIN_NO_OF_PHOTOS = 2;
 export const MAX_NO_OF_PHOTOS = 5;
@@ -138,8 +138,6 @@ export const EXIT_FAILURE = 1;
 
 export const EMAIL_DOMAIN_REGEX = /@nitk\.edu\.in$/;
 
-export const DEFAULT_MAX_POOL_SIZE = 100;
-export const DEFAULT_MONGO_TIMEOUT_MS = 5000;
 export const MAX_QUERY_EXEC_TIME_MS = 10000;
 
 export const CHAT_BATCH_SIZE_FETCH = 15;
