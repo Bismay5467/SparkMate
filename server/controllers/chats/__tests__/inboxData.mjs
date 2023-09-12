@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 import { InboxCollection } from '../../../model/index.mjs';
 import asyncHandler from '../../../utils/asyncHandler.mjs';
-import connectDB from '../../../config/database.mjs';
+import connectDB from '../../../config/database.config.mjs';
 import { inbox1, inbox2, inbox3 } from '../../../mocks/chats/inbox.mocks.mjs';
 
 const SUCCESSS_STATUS_CODE = 200;

@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 import { MessageCollection } from '../../../model/index.mjs';
 import asyncHandler from '../../../utils/asyncHandler.mjs';
-import connectDB from '../../../config/database.mjs';
+import connectDB from '../../../config/database.config.mjs';
 import {
   message1,
   message2,

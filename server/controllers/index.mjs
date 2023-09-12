@@ -1,8 +1,8 @@
-import chatSetUp from './chats/chatSetUp.mjs';
-import chatsBackup from './chats/chatsBackup.mjs';
-import deleteChats from './chats/deleteChats.mjs';
-import fetchAllChats from './chats/fetchAllChats.mjs';
-import fetchChats from './chats/fetchChats.mjs';
+import chatSetUp from './chats/chatSetUp.controller.mjs';
+import chatsBackup from './chats/chatsBackup.controller.mjs';
+import deleteChats from './chats/deleteChats.controller.mjs';
+import fetchAllChats from './chats/fetchAllChats.controller.mjs';
+import fetchChats from './chats/fetchChats.controller.mjs';
 
 // eslint-disable-next-line import/no-named-default
 import { default as SeedInboxData } from './chats/__tests__/inboxData.mjs';
