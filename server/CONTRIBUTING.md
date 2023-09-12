@@ -23,7 +23,7 @@ The following steps will get you up and running to contribute to SparkMate:
 2. Clone your fork locally
 
 ```sh
-git clone https://github.com/<your github username>/LOVE-AT-FIRST-SWIPE.git
+git clone https://github.com/<your github username>/SparkMate.git
 ```
 
 3. Setup all the dependencies and packages by running `npm install`. This command will install all the global dependencies.
