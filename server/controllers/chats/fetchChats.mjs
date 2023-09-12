@@ -1,9 +1,5 @@
-import mongoose from 'mongoose';
-
-import { MAX_QUERY_EXEC_TIME_MS } from '../../common/constants.mjs';
-import { MessageCollection } from '../../model/index.mjs';
+import { GetChats } from '../../services/index.mjs';
 import asyncHandler from '../../utils/asyncHandler.mjs';
-import connectDB from '../../config/database.mjs';
 import { ERROR_CODES, SUCESS_CODES } from '../../common/statusCode.mjs';
 
 const fetchChats = asyncHandler(async (req, res) => {
@@ -11,28 +7,7 @@ const fetchChats = asyncHandler(async (req, res) => {
 
   // inboxID : 64fc0de51e0ff36bb46c7988
 
-  const query = { inboxID };
-
-  const projection = {
-    userID: 1,
-    message: 1,
-    status: 1,
-    createdAt: 1,
-  };
-
-  const sortCriteria = { createdAt: -1 };
-
-  const populationOption = { path: 'userID', select: { name: 1 } };
-
-  await connectDB();
-
-  const messages = await MessageCollection.find(query)
-    .populate(populationOption)
-    .select(projection)
-    .sort(sortCriteria)
-    .maxTimeMS(MAX_QUERY_EXEC_TIME_MS)
-    .lean()
-    .exec();
+  const messages = await GetChats(inboxID);
 
   if (Array.isArray(messages) && messages.length === 0) {
     return res.status(ERROR_CODES['NOT FOUND']).json({
@@ -40,8 +15,6 @@ const fetchChats = asyncHandler(async (req, res) => {
       success: false,
     });
   }
-
-  await mongoose.disconnect();
 
   return res.status(SUCESS_CODES.OK).json({
     message:
