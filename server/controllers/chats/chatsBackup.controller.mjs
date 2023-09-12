@@ -11,8 +11,6 @@ const chatsBackup = asyncHandler(async (req, res, next) => {
 
   const response = await InsertChats(messages);
 
-  console.log(response);
-
   if (Array.isArray(response) && response.length !== messages.length) {
     return next(
       new ErrorHandler(

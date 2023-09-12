@@ -1,8 +1,7 @@
 import mongoose from 'mongoose';
 
-import { InboxCollection } from '../../model/index.mjs';
+import { GetAllChats } from '../../services/index.mjs';
 import asyncHandler from '../../utils/asyncHandler.mjs';
-import connectDB from '../../config/database.config.mjs';
 import { ERROR_CODES, SUCESS_CODES } from '../../common/statusCode.mjs';
 
 const fetchAllChats = asyncHandler(async (req, res) => {
@@ -11,9 +10,7 @@ const fetchAllChats = asyncHandler(async (req, res) => {
 
   // userID : 64fb8867d6497a8738475caa
 
-  await connectDB();
-
-  const chats = GetAllChats({ userID, lastVisit });
+  const chats = await GetAllChats({ userID, lastVisit });
 
   if (Array.isArray(chats) && chats.length === 0) {
     return res.status(ERROR_CODES['NOT FOUND']).json({
@@ -22,8 +19,6 @@ const fetchAllChats = asyncHandler(async (req, res) => {
       success: false,
     });
   }
-
-  await mongoose.disconnect();
 
   return res.status(SUCESS_CODES.OK).json({
     message: 'Your love stories, all gathered here, ready to bloom. 🌹💬',
