@@ -5,7 +5,8 @@ export const user1 = {
   gender: 'gender fluid',
   height: 172.72,
   homeTown: 'jhargram',
-  location: 'mangalore',
+  // eslint-disable-next-line no-magic-numbers
+  location: [69.6969, 69.6969],
   name: 'Rahul Maity',
   phoneNumber: '1234567890',
   photos: ["rahul maity's nudes", 'rahul maity in bikini'],
@@ -18,7 +19,8 @@ export const user2 = {
   gender: 'trans female',
   height: 180.0,
   homeTown: 'naihati',
-  location: 'mangalore',
+  // eslint-disable-next-line no-magic-numbers
+  location: [69.6969, 69.6969],
   name: 'Biplaw Singh',
   phoneNumber: '0987654321',
   photos: ["biplaw singh's nudes", 'biplaw singh in yoga pants'],
@@ -31,7 +33,8 @@ export const user3 = {
   gender: 'rahul maity',
   height: 170.0,
   homeTown: 'dum dum',
-  location: 'mangalore',
+  // eslint-disable-next-line no-magic-numbers
+  location: [69.6969, 69.6969],
   name: 'Arkojeet Bera',
   phoneNumber: '7856321',
   photos: ["arkojeet bera's nudes", 'arkojeet bera in hot pants'],
