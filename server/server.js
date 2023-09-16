@@ -7,6 +7,7 @@ import cookieParser from 'cookie-parser';
 import { DEFAULT_DEV_PORT, EXIT_FAILURE } from './common/constants.mjs';
 
 import { ERROR_CODES } from './common/statusCode.mjs';
+import connectDB from './config/database.config.mjs';
 import { ChatRouter, SeedRouter } from './routes/index.mjs';
 import { ErrorHandler, globalErrorHandler } from './utils/errorHandler.mjs';
 
@@ -43,10 +44,14 @@ app.all('*', (req, _res, next) => {
 app.use(globalErrorHandler);
 
 // eslint-disable-next-line no-console
-app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
+app.listen(PORT, async () => {
+  await connectDB();
+  // eslint-disable-next-line no-console
+  console.log(`Server listening on port ${PORT}`);
+});
 
 process.on('unhandledRejection', (error) => {
   console.error('UNHANDLED REJECTION! Shutting down...');
   console.error(error.name, error.message);
-  app.close(() => process.exit(EXIT_FAILURE));
+  // app.close(() => process.exit(EXIT_FAILURE));
 });

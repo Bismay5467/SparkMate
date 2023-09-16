@@ -80,7 +80,14 @@ export const userSchema = new mongoose.Schema(
     },
     location: {
       required: [true, 'Location is a required field.'],
-      type: String,
+      type: [Number],
+      validate: {
+        message: 'Invalid location. Please enter a valid location',
+        validator(location) {
+          // eslint-disable-next-line no-magic-numbers
+          return location.length === 2;
+        },
+      },
     },
     matched: {
       type: [
