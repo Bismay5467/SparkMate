@@ -192,13 +192,14 @@ userSchema.virtual('age').get(() => {
   return age;
 });
 
-userSchema.virtual('zodiacSign').get(() => {
+// eslint-disable-next-line func-names
+userSchema.virtual('zodiacSign').get(function () {
   const dob = this.DOB;
 
   const month = dob.getMonth() + 1;
   const day = dob.getDate();
 
-  Object.keys(ZODIAC_SIGNS).find((sign) => {
+  const zodiacSign = Object.keys(ZODIAC_SIGNS).find((sign) => {
     const { start, end } = ZODIAC_SIGNS[sign];
 
     const startMonth = start.getMonth() + 1;
@@ -217,7 +218,7 @@ userSchema.virtual('zodiacSign').get(() => {
     return undefined;
   });
 
-  return 'UNKNOWN';
+  return zodiacSign;
 });
 
 export const user = mongoose.model('user', userSchema);
