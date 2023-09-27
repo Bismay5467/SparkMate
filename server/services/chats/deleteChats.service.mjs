@@ -14,11 +14,12 @@ const DeleteChats = async (inboxID) => {
       .maxTimeMS(MAX_QUERY_EXEC_TIME_MS)
       .exec();
 
-    await mongoose.disconnect();
-
     return Promise.resolve(response);
   } catch (error) {
     return Promise.reject(error);
+  } finally {
+    // eslint-disable-next-line no-console
+    await mongoose.disconnect(() => console.log('Database connection closed!'));
   }
 };
 
