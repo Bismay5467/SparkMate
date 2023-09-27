@@ -28,7 +28,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(compression({ level: 6, threshold: 1000 }));
 
-if (NODE_ENV === 'DEVELOPMENT') app.use('/api/seed/chats', SeedRouter);
+if (NODE_ENV === 'DEVELOPMENT') app.use('/api/seed/', SeedRouter);
 
 app.use('/api/chats', ChatRouter);
 
@@ -53,5 +53,5 @@ app.listen(PORT, async () => {
 process.on('unhandledRejection', (error) => {
   console.error('UNHANDLED REJECTION! Shutting down...');
   console.error(error.name, error.message);
-  // app.close(() => process.exit(EXIT_FAILURE));
+  app.close(() => process.exit(EXIT_FAILURE));
 });

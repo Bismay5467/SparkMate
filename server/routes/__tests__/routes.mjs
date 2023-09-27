@@ -12,8 +12,8 @@ const router = express.Router();
 ------------------------CHATS-------------------
 */
 
-router.post('/inbox', SeedInboxData);
-router.post('/message', SeedMessageData);
+router.post('/chats/inbox', SeedInboxData);
+router.post('/chats/message', SeedMessageData);
 
 /*
 ------------------------------------------------
