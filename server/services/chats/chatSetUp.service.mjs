@@ -31,11 +31,11 @@ const ChatSetUp = async (userID) => {
       .lean()
       .exec();
 
-    await mongoose.disconnect();
-
     return Promise.resolve(response);
   } catch (error) {
     return Promise.reject(error);
+  } finally {
+    await mongoose.disconnect(() => console.log('Database connection closed!'));
   }
 };
 

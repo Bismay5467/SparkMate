@@ -11,11 +11,12 @@ const InsertChats = async (messages) => {
 
     const response = await MessageCollection.insertMany(messages, options);
 
-    await mongoose.disconnect();
-
     return Promise.resolve(response);
   } catch (error) {
     return Promise.reject(error);
+  } finally {
+    // eslint-disable-next-line no-console
+    await mongoose.disconnect(() => console.log('Database connection closed!'));
   }
 };
 
