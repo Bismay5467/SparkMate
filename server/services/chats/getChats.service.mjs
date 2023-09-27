@@ -29,8 +29,6 @@ const GetChats = async (inboxID) => {
       .lean()
       .exec();
 
-    await mongoose.disconnect();
-
     return Promise.resolve(response);
   } catch (error) {
     return Promise.reject(error);
