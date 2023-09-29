@@ -35,6 +35,7 @@ const ChatSetUp = async (userID) => {
   } catch (error) {
     return Promise.reject(error);
   } finally {
+    // eslint-disable-next-line no-console
     await mongoose.disconnect(() => console.log('Database connection closed!'));
   }
 };
