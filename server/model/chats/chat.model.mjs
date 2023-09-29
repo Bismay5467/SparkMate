@@ -8,7 +8,7 @@ import {
 
 mongoose.model('user', userSchema);
 
-const messageSchema = new mongoose.Schema(
+export const messageSchema = new mongoose.Schema(
   {
     userID: {
       type: mongoose.Types.ObjectId,

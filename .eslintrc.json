@@ -23,7 +23,7 @@
         "ignoreArrayIndexes": true, 
         "ignoreDefaultValues": true,
         "enforceConst": true,
-        "ignore": [0, 1]
+        "ignore": [0, 1, 2]
     }],
     "curly": ["error", "multi-line"],
     "eqeqeq": ["error", "smart"],

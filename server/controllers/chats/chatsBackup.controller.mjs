@@ -2,12 +2,9 @@ import { ErrorHandler } from '../../utils/errorHandler.mjs';
 import { InsertChats } from '../../services/index.mjs';
 import asyncHandler from '../../utils/asyncHandler.mjs';
 import { ERROR_CODES, SUCESS_CODES } from '../../common/statusCode.mjs';
-import { message1, message2 } from '../../mocks/chats/message.mocks.mjs';
 
 const chatsBackup = asyncHandler(async (req, res, next) => {
-  // const { messageArray: messages } = req.body;
-
-  const messages = [message1, message2];
+  const { messageArray: messages } = req.body;
 
   const response = await InsertChats(messages);
 
