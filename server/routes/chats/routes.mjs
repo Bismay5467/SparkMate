@@ -8,16 +8,18 @@ import {
   fetchChats,
 } from '../../controllers/index.mjs';
 
+import { chatsValidation } from '../../middlewares/index.mjs';
+
 const router = express.Router();
 
-router.get('/:userID', fetchAllChats);
+router.get('/:userID', chatsValidation.getAllChats, fetchAllChats);
 
-router.get('/messages/:inboxID', fetchChats);
+router.get('/messages/:inboxID', chatsValidation.getChats, fetchChats);
 
-router.post('/initiate', chatSetUp);
+router.post('/initiate', chatsValidation.chatSetUp, chatSetUp);
 
-router.post('/messages', chatsBackup);
+router.post('/messages', chatsValidation.chatBackup, chatsBackup);
 
-router.delete('/messages/:inboxID', deleteChats);
+router.delete('/messages/:inboxID', chatsValidation.deleteChat, deleteChats);
 
 export default router;
